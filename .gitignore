@@ -1,7 +1,7 @@
 assets/external/
-.states
+# .states
 *.db
-.web
+# .web
 *.py[cod]
 # .web/
 # .states/
