@@ -22,7 +22,7 @@ def get_config():
             app_name="app",
             plugins=[rx.plugins.TailwindV3Plugin()],
             env=rx.Env.PROD,  # Important for production
-            # frontend_port=3000,  # Optional: specify if needed
-            # backend_port=8000,   # Optional: specify if needed
+            frontend_port=3000,  # Optional: specify if needed
+            backend_port=8000,   # Optional: specify if needed
         )
     return config
