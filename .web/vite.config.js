@@ -37,67 +37,12 @@ function fullReload() {
   };
 }
 
-// export default defineConfig((config) => ({
-//   plugins: [
-//     alwaysUseReactDomServerNode(),
-//     reactRouter(),
-//     safariCacheBustPlugin(),
-//   ].concat([]),
-//   build: {
-//     assetsDir: "/assets".slice(1),
-//     rollupOptions: {
-//       onwarn(warning, warn) {
-//         if (warning.code === "EVAL" && warning.id && warning.id.endsWith("state.js")) return;
-//         warn(warning);
-//       },
-//       jsx: {},
-//       output: {
-//         advancedChunks: {
-//           groups: [
-//             {
-//               test: /env.json/,
-//               name: "reflex-env",
-//             },
-//           ],
-//         },
-//       },
-//     },
-//   },
-//   experimental: {
-//     enableNativePlugin: false,
-//   },
-//   server: {
-//     port: process.env.PORT,
-//     hmr: true,
-//     watch: {
-//       ignored: [
-//         "**/.web/backend/**",
-//         "**/.web/reflex.install_frontend_packages.cached",
-//       ],
-//     },
-//   },
-//   resolve: {
-//     mainFields: ["browser", "module", "jsnext"],
-//     alias: [
-//       {
-//         find: "$",
-//         replacement: fileURLToPath(new URL("./", import.meta.url)),
-//       },
-//       {
-//         find: "@",
-//         replacement: fileURLToPath(new URL("./public", import.meta.url)),
-//       },
-//     ],
-//   },
-// }));
-
 export default defineConfig((config) => ({
   plugins: [
     alwaysUseReactDomServerNode(),
     reactRouter(),
     safariCacheBustPlugin(),
   ].concat([]),
-
   build: {
     assetsDir: "/assets".slice(1),
     rollupOptions: {
@@ -118,16 +63,12 @@ export default defineConfig((config) => ({
       },
     },
   },
-
   experimental: {
     enableNativePlugin: false,
   },
-
-  // ✅ Add allowedHosts here
   server: {
     port: process.env.PORT,
     hmr: true,
-    allowedHosts: ["full-stack-wellness-tracker-main.onrender.com"],
     watch: {
       ignored: [
         "**/.web/backend/**",
@@ -135,7 +76,6 @@ export default defineConfig((config) => ({
       ],
     },
   },
-
   resolve: {
     mainFields: ["browser", "module", "jsnext"],
     alias: [
@@ -150,5 +90,3 @@ export default defineConfig((config) => ({
     ],
   },
 }));
-
-// one two.
